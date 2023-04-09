@@ -1,0 +1,280 @@
+
+
+$primaryColor: #9356dc;
+$secondaryColor: #FF79DA ;
+$tertiaryColor: #99E2D0;
+$background1: #e6e6e6;
+$background2: #f2f2f2;
+$shadow:  #cccccc;
+$textFont: 'Roboto', sans-serif;
+$titlesFont: 'Shrikhand', cursive;
+
+
+
+body {
+    font-family: $textFont;
+    margin: 0px;
+    padding: 0px;
+    
+ }
+
+
+ header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+        width: 50%;
+        padding-right: 20%;
+       
+    }
+
+    a {
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: unset;
+    color: black;
+    }
+ }
+
+ main {
+    
+    img {
+        width: 100%;
+        min-height: 40%;
+        position: relative;
+        z-index: -1;
+    }
+
+    #menu {
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        margin-top: -100px;
+        background-color: $background2;
+        
+        
+        
+        h1 {
+            font: $titlesFont;
+            font-size: xx-large;
+        }
+
+        #menutitle {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+
+           i {
+              font-size: xx-large;
+              position: absolute;
+              margin-left: -50px;
+              margin-top: 10px;
+              animation-name: animationheart;
+              animation-duration: 3s;
+              
+             }
+            
+            .fa-regular {
+              color: grey;
+            }
+            
+            .fa-solid  {
+              color: transparent;
+              background-clip: text;
+              -webkit-background-clip: text;
+              background-image: linear-gradient( to right, #FF79DA, #9356dc);
+              z-index: -1;
+              display: none;
+              animation-name: animationheart;
+              animation-duration: 1s;
+              
+             }
+            
+            .wrap:hover .fa-solid {
+             display: block;
+             z-index: 1;
+             }
+            
+            
+            @keyframes animationheart {
+                        from {opacity: 0%;}
+                        to {opacity: 100%;}
+                      }
+        }
+
+        h5 { 
+            font: $textFont;
+            font-size: x-large;
+            font-weight: lighter;
+            text-decoration: underline;
+            text-decoration-color: $tertiaryColor;
+            text-decoration-style: solid;
+            padding-left: 20px;
+        }
+
+        .menucard {
+            width: 95%;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            box-shadow: 4px 4px 3px $shadow;
+            overflow: hidden;
+            animation: animation2 4s, animation3 2s;
+           
+            .menuitem {
+                font-weight: bolder;
+                font-size: large;
+            }
+
+            .price {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                font-weight: bolder;
+                margin-right: 50px;
+            }
+
+           
+              .txt {
+                min-width: 75%;                
+                padding-left: 15px;
+                transition: min-width 3s;
+                }
+
+            .tickdiv {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background-color: $tertiaryColor;
+             width: 100px;
+              
+              i {
+                color: $tertiaryColor;
+                background-color: white;
+                border-radius: 20px;
+                padding: 10px;
+                font-size: large;
+                animation-name: animation1;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+              }
+            }
+          }
+       
+
+          @keyframes animation1 {
+            from {transform: rotate(0deg)}
+            to {transform: rotate(-360deg)}
+          }
+          
+          .txt:hover {
+            min-width: 50%;
+          }
+
+          @keyframes animation2 {
+            from {opacity: 0%;}
+            to {opacity: 100%;}
+          }
+          
+          @keyframes animation3 {
+             from {margin-top: -20px;}
+            to {margin-top: 0px;}
+          }
+
+          @media screen and (min-width: 380px) {
+
+            .txt {
+              padding-right: 10%;
+            }
+          }
+
+          @media screen and (min-width: 600px) {
+
+            .txt {
+              padding-right: 15%;
+            }
+          }
+
+          @media screen and (min-width: 915px) {
+
+            .txt {
+              padding-right: 20%;
+            }
+          }
+
+          @media screen and (min-width: 1890px) {
+
+            .txt {
+              padding-right: 22%;
+            }
+          }
+        }
+
+     #order{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+  
+        input  {
+          padding: 20px;
+          width: 20%;
+          border-radius: 30px;
+          margin-bottom: 30px;
+          font-weight: bold;
+          color: white;
+          background-image: linear-gradient( to right, $secondaryColor, $primaryColor);
+          border-style: none;
+          box-shadow: 5px 5px 3px $shadow;
+         }
+
+         input:hover {
+          opacity: 70%;
+          box-shadow: 7px 7px 5px $shadow;
+      }
+
+    }
+ }
+
+ footer {
+    background-color: rgb(44, 44, 44);
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: -10px;
+
+   h1 {
+    font-family: $titlesFont;
+    color: white;
+    font-size: large;
+    padding-top: 20px;
+   }
+
+   p {
+    color: white;
+   }
+
+  #suggest, #become {
+    display: flex;
+    flex-direction: row;
+
+    i {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10px;
+       }
+   }
+   a {
+    text-decoration: unset;
+    color: white;
+   }
+}

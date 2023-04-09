@@ -1,0 +1,315 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+body .load {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px dashed #FF79DA;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation: spinnerload 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+body .loadwrap {
+  animation: spinner 5s;
+  z-index: 2;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinnerload {
+  from {
+    border-color: #FF79DA;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+body .overlay {
+  position: absolute;
+  background-color: white;
+  opacity: 50%;
+  width: 100%;
+  height: 200%;
+  z-index: 1;
+  animation-name: overlayloader;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes overlayloader {
+  from {
+    z-index: 1;
+  }
+  to {
+    z-index: -1;
+  }
+}
+body header {
+  z-index: 0;
+}
+body header #logoheader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 20%;
+  padding: 10px;
+}
+body header #location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #e6e6e6;
+}
+body header #location #locationdot {
+  padding-top: 15px;
+  padding-right: 15px;
+}
+body header #booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding-bottom: 50px;
+}
+body header #booking input {
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(to right, #FF79DA, #9356dc);
+  border-style: none;
+  box-shadow: 5px 5px 3px #cccccc;
+}
+body header #booking input:hover {
+  opacity: 70%;
+  box-shadow: 7px 7px 5px #cccccc;
+}
+body main {
+  z-index: 1;
+}
+body main h2 {
+  padding-left: 10%;
+}
+body main #howitworks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #howitworks .howcard {
+  display: flex;
+  flex-direction: row;
+  background-color: #f2f2f2;
+  width: 80%;
+  margin-bottom: 5%;
+  border-radius: 20px;
+}
+body main #howitworks .howcard i {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #7f7987;
+}
+body main #howitworks .howcard #p4, body main #howitworks .howcard #p6, body main #howitworks .howcard #p8 {
+  color: white;
+  background-color: #9356dc;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  margin-left: -20px;
+}
+body main #howitworks .howcard #p5, body main #howitworks .howcard #p7, body main #howitworks .howcard #p9 {
+  font-size: larger;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+@media screen and (max-width: 380px) {
+  body main #howitworks .howcard #p5, body main #howitworks .howcard #p7, body main #howitworks .howcard #p9 {
+    font-size: small;
+  }
+}
+body main #howitworks .howcard:hover {
+  background-color: #f1e4ff;
+}
+body main #howitworks .howcard:hover i {
+  color: #9356dc;
+}
+body main #restaurants {
+  background-color: #f2f2f2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+body main #restaurants h2 {
+  padding-left: 10%;
+  padding-bottom: 20px;
+}
+body main #restaurants .restimg {
+  height: 250px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+@media screen and (min-width: 600px) {
+  body main #restaurants .restimg {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body main #restaurants .restimg {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  body main #restaurants .restimg {
+    height: 600px;
+  }
+}
+body main #restaurants .restcards {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px #cccccc;
+  margin: 20px;
+}
+body main #restaurants .restcards h5 {
+  font-size: larger;
+  margin: 2px;
+}
+body main #restaurants .new {
+  position: absolute;
+  right: 15%;
+  background-color: #99E2D0;
+  color: #32b393;
+  font-weight: bold;
+  font-size: larger;
+  padding: 5px;
+}
+body main #restaurants .info {
+  padding-right: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+body main #restaurants .info i {
+  font-size: xx-large;
+  animation-name: animationheart;
+  animation-duration: 3s;
+}
+body main #restaurants .info .fa-regular {
+  color: grey;
+  position: absolute;
+}
+body main #restaurants .info .fa-solid {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #FF79DA, #9356dc);
+  z-index: -1;
+  display: none;
+  animation-name: animationheart;
+  animation-duration: 1s;
+  position: absolute;
+}
+body main #restaurants .info .wrap {
+  display: flex;
+  align-items: center;
+}
+body main #restaurants .info .wrap:hover .fa-solid {
+  display: block;
+  z-index: 1;
+}
+@keyframes animationheart {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+body main #restaurants .info a {
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+  text-decoration: unset;
+  color: black;
+}
+body main #restaurants .info .txt {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+}
+body footer {
+  background-color: rgb(44, 44, 44);
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-top: -10px;
+}
+body footer h1 {
+  font-family: "Shrikhand", cursive;
+  color: white;
+  font-size: large;
+  padding-top: 20px;
+}
+body footer p {
+  color: white;
+}
+body footer #suggest, body footer #become {
+  display: flex;
+  flex-direction: row;
+}
+body footer #suggest i, body footer #become i {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10px;
+}
+body footer a {
+  text-decoration: unset;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

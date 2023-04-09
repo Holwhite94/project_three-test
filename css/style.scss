@@ -1,0 +1,382 @@
+
+
+$primaryColor: #9356dc;
+$secondaryColor: #FF79DA;
+$tertiaryColor: #99E2D0;
+$background1: #e6e6e6;
+$background2: #f2f2f2;
+$shadow:  #cccccc;
+$textFont: 'Roboto', sans-serif;
+$titlesFont: 'Shrikhand', cursive; 
+
+
+
+body {
+   font-family: $textFont;
+   margin: 0px;
+   padding: 0px;
+   height: 100%;
+   width: 100%;
+
+   .load {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px dashed #FF79DA;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    animation: spinnerload 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+    
+  .loadwrap {
+    animation: spinner 5s;
+    z-index: 2;
+    position: fixed;
+    height:100px;
+    width: 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+ }
+  
+  
+@keyframes spinner {
+    from {transform: rotate(0deg);}
+     to {transform: rotate(360deg);}
+  }
+
+@keyframes spinnerload {
+      from {border-color: #FF79DA;}
+      to {border-color: transparent;}
+    }
+
+  .overlay {
+    position: absolute;
+    background-color: white;
+    opacity: 50%;
+    width: 100%;
+    height: 200%;
+    z-index: 1;
+    animation-name: overlayloader;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+   }
+     
+
+@keyframes overlayloader {
+    from {z-index: 1;}
+    to { z-index: -1;}
+    
+}
+
+header {
+
+    z-index: 0;
+
+    #logoheader {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 20%;
+        padding: 10px;
+    }
+    
+    #location {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        background-color: $background1;
+
+        #locationdot {
+            padding-top: 15px;
+            padding-right: 15px;
+        }
+
+    }
+
+    #booking {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: $background2;
+        padding-bottom: 50px;
+
+        input {
+            padding: 10px;
+            
+            border-radius: 15px;
+            font-weight: bold;
+            color: white;
+            background-image: linear-gradient( to right, $secondaryColor, $primaryColor);
+            border-style: none;
+            box-shadow: 5px 5px 3px $shadow;
+        }
+
+        input:hover {
+            opacity: 70%;
+            box-shadow: 7px 7px 5px $shadow;
+        }
+
+    }
+
+ }
+
+ main {
+    
+  z-index: 1;
+
+h2 {
+    padding-left: 10%;
+}
+
+#howitworks {
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+     .howcard {
+        display: flex;
+        flex-direction: row;
+        background-color: $background2;
+        width: 80%;
+        margin-bottom: 5%;
+        border-radius: 20px;
+
+      i {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        color: #7f7987;
+       }
+
+        #p4, #p6, #p8 {
+            color: white;
+            background-color: $primaryColor;
+            width: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 20px;
+            margin-left: -20px;
+        }
+    
+        #p5, #p7, #p9 {
+            font-size: larger;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        @media screen and (max-width: 380px) {
+            #p5, #p7, #p9 {
+                font-size: small;
+                
+            }
+        }
+
+        
+    }
+
+    .howcard:hover {
+        background-color: #f1e4ff;
+        
+         i {
+            color:$primaryColor;
+        }
+    }
+
+    
+}
+
+#restaurants {
+
+ 
+    background-color: $background2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    h2 {
+        padding-left: 10%;
+        padding-bottom: 20px;
+    }
+
+
+  .restimg {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+   }
+
+   @media screen and (min-width: 600px) {
+    .restimg {
+        height: 400px;
+    }
+   }
+
+   @media screen and (min-width: 992px) {
+    .restimg {
+        height: 500px;
+    }
+   }
+   
+   @media screen and (min-width: 1500px) {
+    .restimg {
+        height: 600px;
+    }
+   }
+
+
+
+ .restcards {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px $shadow;
+    margin: 20px;
+      
+    h5 {
+        font-size: larger;
+        margin: 2px;
+    }
+ }
+
+  .new {
+    position: absolute;
+    right: 15%;
+    background-color: $tertiaryColor;
+    color: #32b393;
+    font-weight: bold;
+    font-size: larger;
+    padding: 5px;
+  }
+
+ .info {
+    padding-right: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    i {
+        font-size: xx-large;
+        animation-name: animationheart;
+        animation-duration: 3s;
+    }
+
+  
+       .fa-regular {
+        color: grey;
+        position:absolute;
+      }
+      
+      .fa-solid {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient( to right, #FF79DA, #9356dc);
+        z-index: -1;
+        display: none;
+        animation-name: animationheart;
+        animation-duration: 1s;
+        position: absolute;
+    }
+
+       .wrap {
+        display: flex;
+        align-items: center;
+       }
+      
+      .wrap:hover .fa-solid {
+       display: block;
+       z-index: 1;
+       }
+      
+      
+      @keyframes animationheart {
+                  from {opacity: 0%;}
+                  to {opacity: 100%;}
+                }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        min-width: 80%;
+        text-decoration: unset;
+        color: black;
+    }
+
+    .txt {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+    
+    }
+}
+
+}
+ }
+  footer {
+    background-color: rgb(44, 44, 44);
+    padding-left: 30px;
+    padding-bottom: 20px;
+    margin-top: -10px;
+
+   h1 {
+    font-family: $titlesFont;
+    color: white;
+    font-size: large;
+    padding-top: 20px;
+   }
+
+   p {
+    color: white;
+   }
+
+  #suggest, #become {
+    display: flex;
+    flex-direction: row;
+
+      i {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10px;
+       }
+   }
+
+   a {
+    text-decoration: unset;
+    color: white;
+   }
+  }
+
+}
